@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans'); /* font usato in tutto il sito */
+@import url('https://fonts.googleapis.com/css?family=Exo+2:200i'); /* font usato per la scritta di benvenuto della home */
+
+@font-face {
+  font-family: myGame; /* font del titolo */
+  src: url('../fonts/Gameplay.ttf'); /* riferimento al font */
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 450px;
+	height: 100vh;
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+	background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.slider {
+    padding: 1vh;
+	overflow: hidden;
+}
+
+@keyframes slide { 
+    /* Quando si specificano stili CSS all'interno della regola keyframes
+    l'animazione cambierà gradualmente dallo stile corrente al nuovo stile in determinati momenti */
+    from { transform: translateX(100%) }
+    to { transform: translateX(-40%) }
+}
+
+/* animazione stile led utilizzata per la scritta di benvenuto */
+@keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #f40, 0 0 40px #f40, 0 0 50px #f40, 0 0 60px #f40, 0 0 70px skyblue;
+    }
+    
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #08f, 0 0 40px #08f, 0 0 50px #08f, 0 0 60px #08f, 0 0 70px #08f, 0 0 80px #08f;
+    }
+}
+
+.sliding {
+	padding: 1vh;
+    animation : slide 8s linear infinite; /* colleghiamo l'animazione di slide all'elemento di classe sliding*/
+}
+
+.title {
+    font-family: myGame; /* font del titolo */
+    color: red; /* colore del titolo */
+    -webkit-text-stroke: 1px white; /* contorno testo */
+    text-shadow: white 0px 0px 9px; /* ombreggiatura testo */
+    font-size: calc(20px + 3.4vh); /* la parte statica del calc serve per settare una font-size minima */
+}
+
+/* serve per associare l'animazione alla scritta di benvenuto */
+.glow {
+    font-family: 'Exo 2';
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+.myCon {
+    padding: 1rem;
+    text-align: center;
+}
+
+.myCol {
+    padding: 1rem;
+    background-color: red;
+    text-align: center;
+    background: rgba(125, 125, 125, 0.2);
+    box-shadow: inset 0 0 8px #000000;
+    border-radius: 15px;
+}
+
+.myCol:hover .image {
+    opacity: 0; /* rende trasparente l'immagine quando si passa sopra con il mouse */
+}
+
+.image {
+    opacity: 1;
+    max-width: 100%;
+    max-height: 100%;
+    transition: .5s ease;
+}
+
+.gif {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 90% 83%;
+}
+
+/* setta le gif come immagini di sfondo quando si passa sopra con il mouse */
+
+.tetris:hover {
+    background-image: url(../gifs/tetris.gif);
+}
+
+.pong:hover {
+    background-image: url(../gifs/pong.gif);
+}
+  
+.snake:hover {
+    background-image: url(../gifs/snake.gif);
+}
+  
+.breakout:hover {
+    background-image: url(../gifs/breakout.gif);
+}

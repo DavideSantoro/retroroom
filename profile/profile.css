@@ -1,0 +1,66 @@
+.card {
+    width: 93%;
+    border: none;
+    background-color: #172d52;
+    box-shadow: 5px 5px 5px 5px rgba(255, 255, 255, 0.5);
+    border-radius: 30px;
+}
+
+.text {
+    color: white;
+}
+
+.stats {
+    background: #f2f5f8 !important;
+    color: black !important;
+    min-height: 84px;
+}
+
+.game {
+    font-size: 15px;
+    color: #a1aab9;
+}
+
+.number {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.gold {
+    color: gold;
+}
+
+.silver {
+    color: silver;
+}
+
+.bronze {
+    color: #cd7f32;
+}
+
+.little-box {
+    width: 95px !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* sposta l'ombra per far brillare la medaglia */
+.little-box:hover .shine {
+    transform: skewX(20deg) translateX(200px);
+}
+
+/* ombra che passa sopra la medaglia per simulare l'animazione */
+.shine {
+    position: absolute;
+    top: 0;
+    left: -70px;
+    height: 98px;
+    width: 50px;
+    background: rgba(255, 255, 255, 0.4);
+    transition: all .3s linear;
+    transform: skewX(20deg) translateX(0);
+}
+ 
+.none {
+    display: none;
+}

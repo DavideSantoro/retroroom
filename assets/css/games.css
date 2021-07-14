@@ -1,0 +1,5 @@
+/* attributi css comuni a tutti i giochi */
+canvas {
+    width: 100%;
+    border: solid .2em #fff; /* stile, spessore e colore del bordo */
+}

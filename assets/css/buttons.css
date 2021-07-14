@@ -1,0 +1,30 @@
+.btn {
+    border: none;
+    width: 100%; /* si adatta al contenitore */
+    border-radius: 8px; /* bordi smussati del bottone */
+    color: #fff;
+    padding-bottom: 15px;
+    position: relative;
+    background-image: linear-gradient(to top, #262626 0px, #404040 10px, #262626 10px, #333 100%);
+    box-shadow: none !important; /* important per non farlo sovrascrivere */
+}
+
+.btn:hover {
+    color: #fff;
+}
+
+.btn:after {
+    content: ""; /* inseriamo una stringa vuota che poi si espande a simulare la barra rossa sotto il pulsante */
+    width: 0;
+    height: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 0 0 8px 8px; /* bordi smussati della barra rossa che si riempie */
+    background: #d7514d;
+    transition: all 0.5s ease;
+}
+
+.btn:hover:after {
+    width: 100%; /* quando mettiamo il mouse sul bottone si allarga la barra rossa*/
+}

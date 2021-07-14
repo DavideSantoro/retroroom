@@ -1,0 +1,92 @@
+/*-----Leaderboard-------*/
+.leaderboard {
+	background: -webkit-linear-gradient(to top, #262626 0px, #333 100%);
+	background: linear-gradient(to top, #262626 0px, #333 100%);
+	border-radius: 10px;
+	box-shadow: 0 7px 30px rgba(62, 9, 11, 0.3);
+}
+
+.leaderboard h1 {
+	font-size: 18px;
+	color: #e1e1e1;
+	padding: 12px 13px 15px;
+	text-align: center;
+}
+
+.leaderboard ol {
+	counter-reset: leaderboard; /* setta a 0 un contatore di nome leaderboard */
+}
+
+.leaderboard ol li {
+	position: relative;
+	z-index: 1;
+	font-size: 15px;
+	counter-increment: leaderboard; /* incrementa ogni volta di uno il contatore leaderboard */
+	padding: 18px 10px 18px 50px;
+}
+
+.leaderboard ol li::before { /* pseudo-elemento, permette la selezione di contenuto che ancora non esiste nel documento, oppure di contenuto molto specifico */
+	content: counter(leaderboard); /* inserisce il contatore all'inizio del list item */
+	position: absolute;
+	z-index: 2;
+	top: 20px;
+	left: 15px;
+	width: 20px;
+	height: 20px;
+	line-height: 18px;
+	color: #c24448;
+	background: #fff;
+	border-radius: 20px;
+	text-align: center;
+}
+
+.leaderboard ol li .user {
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 18px 10px 18px 50px;
+	margin: 0; /* spazio attorno all'elemento, a differenza del padding che spazia attorno al primo figlio dell'elemento */
+	background: none;
+	color: #fff;
+}
+
+.leaderboard ol li .score {
+	position: relative;
+	z-index: 2;
+	display: block;
+	text-align: right;
+	color: snow;
+}
+
+.leaderboard ol li:nth-child(1) { /* pseudo-classe, permette la selezione basata su informazioni che non possono essere catturate da gli altri selettori semplici */
+	background: #fa6855;
+}
+.leaderboard ol li:nth-child(2) {
+	background: #e0574f;
+}
+.leaderboard ol li:nth-child(3) {
+	background: #d7514d;
+}
+.leaderboard ol li:nth-child(4) {
+	background: #cd4b4b;
+}
+.leaderboard ol li:nth-child(5) {
+	background: #c24448;
+}
+.leaderboard ol li:nth-last-child(1) { /* bordo smussato all'ultimo figlio */
+	border-radius: 0 0 10px 10px;
+}
+
+.leaderboard ol li:hover {
+	z-index: 2;
+	overflow: visible;
+	opacity: 1;
+	-webkit-transform: scaleX(1.06) scaleY(1.03); /* webkit e' il prefisso specifico per chrome e safari, utile per mitigare eventuali incosistenze */
+	transform: scaleX(1.06) scaleY(1.03);
+	-webkit-transition: all .35s ease-in-out; /* ease-in-out = animazione veloce all'inizio e alla fine */
+	transition: all .35s ease-in-out;
+	box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1); /* hor-offset ver-offset blur color */
+}

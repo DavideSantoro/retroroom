@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Premier'; /* font usato per il punteggio nel canvas */
+    src: url("../assets/fonts/Premier2019.ttf");
+}
+
+@media screen and (min-width: 992px) {
+    canvas { 
+        width: 58vw !important;
+    }
+}

@@ -1,0 +1,31 @@
+body {
+    color: #fff; /* colore del font dello score */
+    font-size: 2em; /* relativa al font-size dell'elemento padre, di default 2em sono 32 pixel */
+}
+
+canvas {
+    width: 90%; /* larghezza canvas */
+}
+
+/* media query per adattare la dimensione del canvas quando si restringe la pagina */
+@media screen and (min-width: 576px) and (max-width: 991px) {
+    canvas { 
+        width: 50% !important;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    canvas { 
+        width: 24vw !important;
+    }
+}
+
+/* per rendere più visibile lo score */
+#score {
+    padding: 0.25em 0.3em;
+    line-height: 0.75em;
+    font-weight: bold;
+    border-radius: 7px;
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.7);
+}
